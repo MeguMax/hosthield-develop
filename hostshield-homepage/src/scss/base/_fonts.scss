@@ -1,0 +1,190 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/fonts/Inter-Black.woff2') format('woff2'),
+    url('../src/fonts/Inter-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/fonts/Inter-Bold.woff2') format('woff2'),
+    url('../src/fonts/Inter-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/fonts/Inter-ExtraBold.woff2') format('woff2'),
+    url('../src/fonts/Inter-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/fonts/Inter-Light.woff2') format('woff2'),
+    url('../src/fonts/Inter-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/fonts/Inter-Regular.woff2') format('woff2'),
+    url('../src/fonts/Inter-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/fonts/Inter-Thin.woff2') format('woff2'),
+    url('../src/fonts/Inter-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../src/fonts/Inter-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/fonts/Inter-ExtraLight.woff2') format('woff2'),
+    url('../src/fonts/Inter-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/fonts/Inter-Medium.woff2') format('woff2'),
+    url('../src/fonts/Inter-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+.inter-72-600 {
+  font-family: 'Inter';
+  font-size: 72px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  @include mq(1650) {
+    font-size: 60px;
+  }
+  @include mq(767) {
+    font-size: 40px;
+  }
+}
+
+.inter-25-normal {
+  font-family: 'Inter';
+  font-size: 25px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  @include mq(1650) {
+    font-size: 20px;
+  }
+}
+
+.inter-25-bold {
+  font-family: 'Inter';
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  @include mq(1650) {
+    font-size: 20px;
+  }
+}
+
+.inter-21-600 {
+  font-family: 'Inter';
+  font-size: 21px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  @include mq(1650) {
+    font-size: 18px;
+  }
+}
+
+.inter-54-bold {
+  font-family: 'Inter';
+  font-size: 54px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.11;
+  letter-spacing: normal;
+  @include mq(1650) {
+    font-size: 45px;
+  }
+  @include mq(767) {
+    font-size: 30px;
+  }
+}
+.inter-21-bold {
+  font-family: 'Inter';
+  font-size: 21px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  @include mq(1650) {
+    font-size: 18px;
+  }
+}
+
+.inter-48-600 {
+  font-family: 'Inter';
+  font-size: 48px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  @include mq(1650) {
+    font-size: 35px;
+  }
+  @include mq(767) {
+    font-size: 25px;
+  }
+}
+
+.inter-21-normal {
+  font-family: 'Inter';
+  font-size: 21px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  @include mq(1650) {
+    font-size: 18px;
+  }
+}

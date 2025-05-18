@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CWCDC38FV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7CWCDC38FV');
+    </script>
+    </head>
+  <body>
+    <header class="header">
+      <img
+        class="header__logo | js-scroll"
+        src="./src/images/logo.svg"
+        alt="Host Shield"
+        data-target="banner"
+      />
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li
+            class="navigation__item inter-25-normal | js-scroll"
+            data-target="aboutus"
+            data-offset="200"
+          >
+            About us
+          </li>
+          <li
+            class="navigation__item inter-25-normal | js-scroll"
+            data-target="services"
+          >
+            Services
+          </li>
+          <li
+            class="navigation__item inter-25-normal | js-scroll"
+            data-target="contact"
+          >
+            Contact
+          </li>
+          <li class="navigation__item inter-25-bold"><a href="#">Login</a></li>
+          <li class="navigation__item inter-25-bold navigation__item-button">
+            <a href="#"> Sign Up</a>
+          </li>
+        </ul>
+        <div class="close">
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0)">
+              <path
+                d="M29.5808 25.0409L49.0498 5.57128C50.3168 4.30487 50.3168 2.25724 49.0498 0.990828C47.7834 -0.275589 45.7358 -0.275589 44.4693 0.990828L24.9997 20.4604L5.53071 0.990828C4.2637 -0.275589 2.21668 -0.275589 0.950258 0.990828C-0.316753 2.25724 -0.316753 4.30487 0.950258 5.57128L20.4193 25.0409L0.950258 44.5105C-0.316753 45.7769 -0.316753 47.8245 0.950258 49.0909C1.58139 49.7227 2.41124 50.04 3.24049 50.04C4.06974 50.04 4.89899 49.7227 5.53071 49.0909L24.9997 29.6213L44.4693 49.0909C45.1011 49.7227 45.9303 50.04 46.7596 50.04C47.5888 50.04 48.4181 49.7227 49.0498 49.0909C50.3168 47.8245 50.3168 45.7769 49.0498 44.5105L29.5808 25.0409Z"
+                fill="black"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="50" height="50" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+      </nav>
+      <div class="hamburger">
+        <svg
+          width="48"
+          height="36"
+          viewBox="0 0 48 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M46 19.9585H2C0.895996 19.9585 0 19.0625 0 17.9585C0 16.8545 0.895996 15.9585 2 15.9585H46C47.104 15.9585 48 16.8545 48 17.9585C48 19.0625 47.104 19.9585 46 19.9585Z"
+            fill="white"
+          />
+          <path
+            d="M46 4.625H2C0.895996 4.625 0 3.729 0 2.625C0 1.521 0.895996 0.625 2 0.625H46C47.104 0.625 48 1.521 48 2.625C48 3.729 47.104 4.625 46 4.625Z"
+            fill="white"
+          />
+          <path
+            d="M46 35.2915H2C0.895996 35.2915 0 34.3955 0 33.2915C0 32.1874 0.895996 31.2915 2 31.2915H46C47.104 31.2915 48 32.1874 48 33.2915C48 34.3955 47.104 35.2915 46 35.2915Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+    </header>
+    <main class="main">
+      <section class="banner" id="banner">
+        <div class="banner__inner">
+          <div class="banner__left">
+            <h1 class="banner__heading inter-72-600" data-aos="fade-up">
+              Instant access to lawyers - affordable
+            </h1>
+            <p
+              class="banner__paragraph inter-25-normal"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              We help you navigate short term rental laws. Hostshield was
+              founded by injury lawyers who have successfully defeated liability
+              waivers used by billion-dollar companies.
+            </p>
+            <button
+              class="banner__button inter-25-bold | js-scroll"
+              data-target="aboutus"
+              data-offset="200"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              Learn More
+            </button>
+          </div>
+          <div class="banner__right">
+            <img src="./src/images/home_header_illustration.svg" alt="People" />
+          </div>
+        </div>
+        <div class="banner__bg">
+          <picture>
+            <img
+              class="banner__img"
+              src="./src/images/home_header_background.svg"
+              alt="Banner"
+            />
+          </picture>
+        </div>
+      </section>
+      <section class="about" id="aboutus">
+        <div class="about-bg">
+          <img src="./src/images/about-bg.svg" alt="" />
+        </div>
+        <div class="about__inner">
+          <div class="about__left">
+            <picture>
+              <source
+                srcset="./src/images/home_about_img.webp"
+                type="image/webp"
+              />
+              <img
+                class="about__img"
+                src="./src/images/home_about_img.png"
+                alt="About"
+              />
+            </picture>
+          </div>
+          <div class="about__right">
+            <h3 class="about__subheading inter-21-600" data-aos="fade-up">
+              About us
+            </h3>
+            <h2 class="about__heading inter-54-bold" data-aos="fade-up">
+              We help you navigate short term rental laws.
+            </h2>
+            <p class="about__paragraph inter-25-normal" data-aos="fade-up">
+              We have successfully litigated against landlords, property owners,
+              and property management companies and have seen the extreme risk
+              carried by business who have inadequate legal protection and
+              flimsy waivers. We also started a real estate investment company
+              which operates several short-term rentals. We began drafting our
+              own liability protection agreements and quickly realized an
+              efficient way to draft, organize, and store waivers did not exist.
+            </p>
+            <p class="about__paragraph inter-25-normal" data-aos="fade-up">
+              It occurred to us that most property owners who operate rentals do
+              not possess the legal expertise to sufficiently protect themselves
+              from liability. The founders’ expertise is the perfect
+              intersection between lawyer and rental host.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="services" id="services">
+        <div class="services__inner">
+          <div class="services__top">
+            <div class="services__left">
+              <h3 class="about__subheading inter-21-600" data-aos="fade-up">
+                Services
+              </h3>
+              <h2 class="about__heading inter-54-bold" data-aos="fade-up">
+                How HostShield can protect your rental business.
+              </h2>
+              <p class="about__paragraph inter-25-normal" data-aos="fade-up">
+                Every short-term rental host is running a small business.
+                Platforms like Airbnb and VRBO have made it simple to start a
+                rental business but many hosts do not realize a significant
+                amount of risk comes with operating a rental business. These
+                rental platforms fail to provide hosts with the right guidance
+                to ensure hosts are protected under the law.
+              </p>
+            </div>
+            <div class="services__right">
+              <picture>
+                <img
+                  class="services__img"
+                  src="./src/images/home_page_services.svg"
+                  alt="Services"
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="services__bottom">
+            <div class="services__item" data-aos="fade-up">
+              <img
+                class="about__img"
+                src="./src/images/checked.svg"
+                alt="Checkmark"
+              />
+              <p>Our Legal experts are here for you 24/7</p>
+            </div>
+            <div class="services__item" data-aos="fade-up">
+              <img
+                class="about__img"
+                src="./src/images/checked.svg"
+                alt="Checkmark"
+              />
+              <p>
+                Comprehensive liability protection from our expert attorneys
+              </p>
+            </div>
+            <div class="services__item" data-aos="fade-up">
+              <img
+                class="about__img"
+                src="./src/images/checked.svg"
+                alt="Checkmark"
+              />
+              <p>Streamlined and efficient, protection without the hassle</p>
+            </div>
+            <div class="services__item" data-aos="fade-up">
+              <img
+                class="about__img"
+                src="./src/images/checked.svg"
+                alt="Checkmark"
+              />
+              <p>
+                The resources and guidance to operate and grow a sustainable
+                business
+              </p>
+            </div>
+            <div class="services__item" data-aos="fade-up">
+              <img
+                class="about__img"
+                src="./src/images/checked.svg"
+                alt="Checkmark"
+              />
+              <p>Level the playing field with expert lawyers on your side</p>
+            </div>
+            <div class="services__item" data-aos="fade-up">
+              <img
+                class="about__img"
+                src="./src/images/checked.svg"
+                alt="Checkmark"
+              />
+              <p>We can answer any questions that involve short term rentals</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pricing" id="pricing">
+        <div class="pricing__bg">
+          <img src="./src/images/home_pricing_bg.svg" alt="Pricing" />
+        </div>
+        <h3 class="pricing__subheading inter-21-600" data-aos="fade-up">
+          Pricing
+        </h3>
+        <h2 class="pricing__heading inter-54-bold" data-aos="fade-up">
+          How HostShield can protect <br />
+          your rental business.
+        </h2>
+        <div class="pricing__inner">
+          <div class="pricing__left" data-aos="fade-up">
+            <div class="pricing__top">
+              <p class="pricing__title inter-25-bold">Hostshield Lite</p>
+              <div class="pricing__price">
+                <div class="pricing__number inter-48-600">$19.99</div>
+                <div class="pricing__label inter-21-normal">
+                  / month per property
+                </div>
+              </div>
+            </div>
+            <div class="pricing__body">
+              <div class="pricing__item inter-25-normal">
+                <img
+                  class="pricing__checkmark"
+                  src="./src/images/checked.svg"
+                  alt="Checkmark"
+                />
+                <p>
+                  You're basically paying for our platform and generic waiver
+                  template
+                </p>
+              </div>
+              <div class="pricing__item inter-25-normal">
+                <img
+                  class="pricing__checkmark"
+                  src="./src/images/checked.svg"
+                  alt="Checkmark"
+                />
+                <p>Need to decide if we even want to offer this</p>
+              </div>
+              <a href="#" class="pricing__button inter-21-bold">Choose Plan</a>
+            </div>
+          </div>
+          <div class="pricing__middle" data-aos="fade-up">
+            <div class="pricing__top">
+              <p class="pricing__title inter-25-bold">
+                Hostshield With Waiver Defense
+              </p>
+              <div class="pricing__price">
+                <div class="pricing__number inter-48-600">$39.99</div>
+                <div class="pricing__label inter-21-normal">
+                  / month per property
+                </div>
+              </div>
+            </div>
+            <div class="pricing__body">
+              <div class="pricing__item inter-25-normal">
+                <img
+                  class="pricing__checkmark"
+                  src="./src/images/checked.svg"
+                  alt="Checkmark"
+                />
+                <p>
+                  Custom waiver our lawyers will defend if lawsuit is ever
+                  brought or waiver is challenged - plus storage.
+                </p>
+              </div>
+              <div class="pricing__item inter-25-normal">
+                <img
+                  class="pricing__checkmark"
+                  src="./src/images/checked.svg"
+                  alt="Checkmark"
+                />
+                <p>
+                  One time $250 drafting fee rolled over into monthly charges
+                </p>
+              </div>
+              <a href="#" class="pricing__button inter-21-bold">Choose Plan</a>
+            </div>
+          </div>
+          <div class="pricing__right" data-aos="fade-up">
+            <div class="pricing__top">
+              <p class="pricing__title inter-25-bold">Entity Formation</p>
+              <div class="pricing__price">
+                <div class="pricing__number inter-48-600">$250</div>
+                <div class="pricing__label inter-21-normal">/ flat-fee</div>
+              </div>
+            </div>
+            <div class="pricing__body">
+              <div class="pricing__item inter-25-normal">
+                <img
+                  class="pricing__checkmark"
+                  src="./src/images/checked.svg"
+                  alt="Checkmark"
+                />
+                <p>
+                  You're basically paying for our platform and generic waiver
+                  template
+                </p>
+              </div>
+              <div class="pricing__item inter-25-normal">
+                <img
+                  class="pricing__checkmark"
+                  src="./src/images/checked.svg"
+                  alt="Checkmark"
+                />
+                <p>Need to decide if we even want to offer this</p>
+              </div>
+              <a href="#" class="pricing__button inter-21-bold">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="contact__left">
+          <h3 class="about__subheading inter-21-600" data-aos="fade-up">
+            Contact Us
+          </h3>
+          <h2 class="about__heading inter-54-bold" data-aos="fade-up">
+            How HostShield can protect your rental business.
+          </h2>
+          <p class="about__paragraph inter-25-normal" data-aos="fade-up">
+            Every short-term rental host is running a small business. Platforms
+            like Airbnb and VRBO have made it simple to start a rental business
+            but many hosts do not realize a significant amount of risk comes
+            with operating a rental business.
+          </p>
+        </div>
+        <div class="contact__right">
+          <div class="contact__box">
+            <form class="contact__form | js-contact-form">
+              <input
+                class="contact__input | js-form-name"
+                type="text"
+                placeholder="Full Name"
+              />
+              <br />
+              <input
+                class="contact__input | js-form-email"
+                type="email"
+                placeholder="Email Address"
+              />
+              <br />
+              <textarea
+                class="contact__textarea | js-form-message"
+                name="message"
+                cols="10"
+                rows="4"
+                placeholder="Message..."
+              ></textarea>
+              <br />
+              <button class="contact__button inter-25-bold">
+                SEND MESSAGE
+              </button>
+              <div class="contact__msg">Success</div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__bg">
+        <img src="./src/images/home_footer_bg.png" alt="Footer Background" />
+      </div>
+      <div class="footer__top">
+        <div class="footer__left">
+          <img src="./src/images/logo.svg" alt="Host Shield" />
+          <p>
+            We help you navigate short term rental laws. Hostshield was founded
+            by injury lawyers who have successfully defeated liability waivers
+            used by billion-dollar companies.
+          </p>
+        </div>
+        <div class="footer__middle">
+          <div class="footer__title">Website</div>
+          <ul class="footer__list">
+            <li
+              class="footer__item inter-25-normal | js-scroll"
+              data-target="aboutus"
+              data-offset="200"
+            >
+              About us
+            </li>
+            <li
+              class="footer__item inter-25-normal | js-scroll"
+              data-target="services"
+            >
+              Services
+            </li>
+            <li
+              class="footer__item inter-25-normal | js-scroll"
+              data-target="contact"
+            >
+              Contact
+            </li>
+            <li class="footer__item inter-25-bold"><a href="#">Login</a></li>
+            <li class="footer__item inter-25-bold"><a href="#">Sign Up</a></li>
+          </ul>
+        </div>
+        <div class="footer__right">
+          <div class="footer__title">Newsletter</div>
+          <form class="js-newsletter-form">
+            <input
+              type="email"
+              placeholder="Email Address"
+              class="js-newsletter-email"
+            />
+            <br />
+            <button type="submit" class="inter-25-bold">SIGN UP</button>
+            <div class="footer__right-msg | js-newsletter-msg">Success</div>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">2021 © HostShield</div>
+    </footer>
+    <script src="./dist/main.js"></script>
+  </body>
+</html>
