@@ -305,7 +305,7 @@ export default function SignUpPayment() {
         "Content-Type": "application/x-www-form-urlencoded",
         Authorization:
           "Bearer " +
-          "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",
+          "API_KEY",
       },
     });
     res.json().then((data) => {
