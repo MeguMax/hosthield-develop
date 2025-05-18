@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="30px" viewBox="0 0 28 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>add_new_waiver_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="sidebar_only_icons" transform="translate(-36.000000, -30.000000)">
+            <g id="add_new_waiver_icon">
+                <g transform="translate(32.000000, 27.000000)">
+                    <polygon id="Path" points="0 0 36 0 36 36 0 36"></polygon>
+                    <path d="M22.5,6 L7.5,6 L7.5,30 L28.5,30 L28.5,12 L22.5,12 L22.5,6 Z M4.5,4.488 C4.5,3.666 5.1705,3 5.9985,3 L24,3 L31.5000371,10.5 L31.5000371,31.4895 C31.5027945,31.8873277 31.3474332,32.2699704 31.0680956,32.5532462 C30.7887581,32.8365221 30.4083278,32.997225 30.0105,33 L5.9895,33 C5.16983332,32.9942883 4.50653759,32.3316605 4.5,31.512 L4.5,4.488 Z M16.5,16.5 L16.5,12 L19.5,12 L19.5,16.5 L24,16.5 L24,19.5 L19.5,19.5 L19.5,24 L16.5,24 L16.5,19.5 L12,19.5 L12,16.5 L16.5,16.5 Z" id="Shape" fill="#313131" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="30px" viewBox="0 0 29 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>logout_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="sidebar_only_icons" transform="translate(-38.000000, -1220.000000)">
+            <g id="logout">
+                <g transform="translate(0.000000, 1189.000000)">
+                    <g id="logout_icon" transform="translate(32.000000, 28.000000)">
+                        <polygon id="Path" points="0 0 36 0 36 36 0 36"></polygon>
+                        <path d="M7.5,33 C6.67157288,33 6,32.3284271 6,31.5 L6,4.5 C6,3.67157288 6.67157288,3 7.5,3 L28.5,3 C29.3284271,3 30,3.67157288 30,4.5 L30,9 L27,9 L27,6 L9,6 L9,30 L27,30 L27,27 L30,27 L30,31.5 C30,32.3284271 29.3284271,33 28.5,33 L7.5,33 Z M27,24 L27,19.5 L16.5,19.5 L16.5,16.5 L27,16.5 L27,12 L34.5,18 L27,24 Z" id="Shape" fill="#313131" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

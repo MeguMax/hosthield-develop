@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="32px" viewBox="0 0 24 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>profile_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="sidebar_only_icons" transform="translate(-38.000000, -210.000000)">
+            <g id="profile_icon">
+                <g transform="translate(32.000000, 209.000000)">
+                    <polygon id="Path" points="0 0 36 0 36 36 0 36"></polygon>
+                    <path d="M30,33 L27,33 L27,30 C27,27.5147186 24.9852814,25.5 22.5,25.5 L13.5,25.5 C11.0147186,25.5 9,27.5147186 9,30 L9,33 L6,33 L6,30 C6,25.8578644 9.35786438,22.5 13.5,22.5 L22.5,22.5 C26.6421356,22.5 30,25.8578644 30,30 L30,33 Z M17.9999999,19.5 C14.7846097,19.5 11.8134664,17.7846097 10.2057713,15 C8.59807607,12.2153903 8.59807607,8.78460967 10.2057713,6 C11.8134664,3.21539025 14.7846097,1.5 17.9999999,1.5 C22.9705627,1.5 26.9999999,5.52943725 26.9999999,10.5 C26.9999999,15.4705627 22.9705627,19.5 17.9999999,19.5 L17.9999999,19.5 Z M18,16.5 C21.3137085,16.5 24,13.8137085 24,10.5 C24,7.1862915 21.3137085,4.5 18,4.5 C14.6862915,4.5 12,7.1862915 12,10.5 C12,13.8137085 14.6862915,16.5 18,16.5 Z" id="Shape" fill="#313131" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

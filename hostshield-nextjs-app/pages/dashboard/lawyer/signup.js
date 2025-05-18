@@ -1,0 +1,454 @@
+import { useEffect, useState } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from 'next/router';
+//Components
+import DropzoneWithoutDrag from "../../../src/components/file-upload";
+//Icons
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { RiAttachmentLine } from "react-icons/ri";
+//Logo
+import Logo from "../../../src/components/header/logo";
+//Backgrounds
+import TransparentShieldBg from "../../../src/components/background/transparent-hostshield-bg";
+
+import styled from "styled-components";
+//Animations
+import { motion } from "framer-motion";
+import { pageAnimation } from "../../../src/components/animation/index";
+import { PUBLIC_API_KEY } from '../../../utils';
+
+export default function SignUp() {
+  const [checkme, setCheckMe] = useState(false);
+  const [emailField, setEmailField] = useState('');
+  const router = useRouter();
+  const [validationErrors, setValidationErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (router.query.email) {
+      setEmailField(router.query.email);
+    }
+  }, [router.query]);
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+    const {target} = event;
+    const {form} = target;
+    const email = form['1'].name === 'email' ? form['1'].value: '';
+    const username = form['2'].name === 'username' ? form['2'].value : '';
+    const password = form['3'].name === 'password' ? form['3'].value : '';
+    const repeatPassword = form['4'].name === 'confirm_password' ? form['4'].value : '';
+    const image = form['5'].type === 'file' ? form['5'].files[0] : '';
+
+    const toBase64 = file => new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+
+    // password validation
+    if (password !== repeatPassword) {
+      const updatedErrors = [...validationErrors];
+      updatedErrors.push('You must enter same password twice!');
+      setValidationErrors(updatedErrors);
+      setIsLoading(false);
+      return;
+    }
+
+    if (image) {
+      toBase64(image).then(base64Image => {
+        // send data to BE
+        const url = `${PUBLIC_API_KEY}/lawyer/signup`;
+        fetch(url, {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            token: router?.query?.token || '',
+            email,
+            username,
+            password,
+            image: base64Image || '',
+          })
+        }).then(response => {
+              // handle response
+              setIsLoading(false);
+              router.push("/");
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        setIsLoading(false);
+      });
+    } else {
+      // send data to BE
+      const url = `${PUBLIC_API_KEY}/lawyer/signup`;
+      fetch(url, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          token: router?.query?.token || '',
+          email,
+          username,
+          password,
+          image: '',
+        })
+      }).then(response => {
+            // handle response
+            setIsLoading(false);
+            router.push("/");
+      }).catch(err => {
+        console.error(error);
+        setIsLoading(false);
+      });
+    }
+  }
+
+  const downloadTerms = () => {
+    fetch('../../terms.pdf', {
+      method: 'GET',
+      headers: {
+        "content-type": 'application/pdf'
+      }
+    }).then(response => {
+     response.blob().then(blob => {
+      const newBlob = new Blob([blob]);
+      const blobUrl = window.URL.createObjectURL(newBlob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.setAttribute('download', `terms.pdf`);
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+
+      window.URL.revokeObjectURL(blob);
+     })
+    }).catch(err => console.error(err));
+  }
+
+  const downloadPrivacy = () => {
+    fetch('../../privacy.pdf', {
+      method: 'GET',
+      headers: {
+        "content-type": 'application/pdf'
+      }
+    }).then(response => {
+     response.blob().then(blob => {
+      const newBlob = new Blob([blob]);
+      const blobUrl = window.URL.createObjectURL(newBlob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.setAttribute('download', `privacy.pdf`);
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+
+      window.URL.revokeObjectURL(blob);
+     })
+    }).catch(err => console.error(err));
+  }
+
+  return (
+    <div className="min-h-screen">
+      <Head>
+        <title>SignUp | HostShield</title>
+        <meta name="description" content="Generated by create next app" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <motion.section
+        className=""
+        exit="exit"
+        variants={pageAnimation}
+        initial="hidden"
+        animate="show"
+      >
+        <div className="flex flex-col lg:flex-row md:min-h-screen bg-section-gradient">
+          <div className="min-h-screen order-2 md:order-1 lg:w-2/5 bg-white p-5 flex flex-col justify-between lg:rounded-r-4xl">
+            <div>
+              <MdKeyboardArrowLeft className="inline-block text-xl" />
+              <Link href="/">
+                <a className="text-sm font-semibold text-site-dark">
+                  Back To Home
+                </a>
+              </Link>
+            </div>
+            <div className="flex flex-col justify-evenly mt-16 lg:mt-12">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-medium text-center text-site-dark">
+                  Create Account
+                </h1>
+                <p className="text-sm md:text-base text-center text-gray-400 mt-4">
+                  Create your manager account
+                </p>
+              </div>
+              <form
+                className="space-y-6 mx-auto w-full md:w-8/12 lg:w-10/12 2xl:w-7/12"
+              >
+                <input type="hidden" name="agree" value={checkme} />
+                <div className="mt-5">
+                  <div className="flex space-y-1 flex-col justify-center">
+                    <label
+                      className="text-gray-500 text-base"
+                      htmlFor="email-address"
+                    >
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email-address"
+                      placeholder=""
+                      name="email"
+                      autoComplete="email"
+                      required
+                      className="bg-gray-100 border-gray-200 focus:border-gray-300 focus:ring-0 font-light text-site-dark py-2 px-5 rounded-md"
+                      disabled={true}
+                      value={emailField}
+                    />
+                  </div>
+                </div>
+                <div className="mt-5">
+                  <div className="flex space-y-1 flex-col justify-center">
+                    <label
+                      className="text-gray-500 text-base"
+                      htmlFor="username"
+                    >
+                      Username
+                    </label>
+                    <input
+                      type="text"
+                      id="username"
+                      placeholder=""
+                      name="username"
+                      autoComplete="username"
+                      required
+                      className="bg-gray-100 border-gray-200 focus:border-gray-300 focus:ring-0 font-light text-site-dark py-2 px-5 rounded-md"
+                    />
+                  </div>
+                </div>
+                <div className="mt-5 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                  <div className="sm:col-span-3">
+                    <label
+                      htmlFor="password"
+                      className="block text-gray-500 text-base"
+                    >
+                      Password
+                    </label>
+                    <div className="mt-1">
+                      <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        className="block w-full bg-gray-100 border-gray-200 focus:border-gray-300 focus:ring-0 font-light text-site-dark py-2 px-5 rounded-md"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="sm:col-span-3">
+                    <label
+                      htmlFor="confirm_password"
+                      className="block text-gray-500 text-base"
+                    >
+                      Repeat Password
+                    </label>
+                    <div className="mt-1">
+                      <input
+                        type="password"
+                        name="confirm_password"
+                        id="confirm_password"
+                        required
+                        className="block w-full bg-gray-100 border-gray-200 focus:border-gray-300 focus:ring-0 font-light text-site-dark py-2 px-5 rounded-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-5 flex justify-center ">
+                  <DropzoneWithoutDrag
+                    className="flex justify-center items-center space-x-1 bg-input-gray border-gray-100 py-7 px-5 rounded-md cursor-pointer"
+                    IconClasses="text-gray-400 text-xl cursor-pointer"
+                    LabelText="Upload your profile picture"
+                    LabelTextClasses="text-site-dark text-opacity-50 font-normal"
+                    Icon={
+                      <RiAttachmentLine className="text-gray-400 text-xl" />
+                    }
+                    limit={1}
+                    accept=".png,.jpg"
+                  />
+                </div>
+                <div className="mt-5">
+                  <fieldset>
+                    <div className="mt-4 space-y-4">
+                      <div className="flex items-start">
+                        <div className="flex items-center h-5">
+                          <input
+                            id="agree"
+                            name="agree"
+                            type="checkbox"
+                            className="text-site-main border-gray-300 checked:ring-offset-0 checked:ring-0 focus:ring-offset-0 focus:ring-0 h-4 w-4 rounded"
+                            onChange={() => setCheckMe(!checkme)}
+                          />
+                        </div>
+                        <div className="ml-3 text-sm">
+                          <label
+                            htmlFor="agree"
+                            className="font-light text-site-darkgray"
+                          >
+                            I&rsquo;ve read and agree with
+                            {/* <Link className="" href="#">
+                              <a
+                                className="text-site-dark font-medium"
+                                href="#"
+                              >
+                                &nbsp;Terms of Service&nbsp;
+                              </a>
+                            </Link> */}
+                            <span className="text-site-dark font-medium cursor-pointer" onClick={downloadTerms}>
+                              Terms of Service&nbsp;
+                            </span>
+                            and our&nbsp;
+                            {/* <Link href="#">
+                              <a
+                                className="text-site-dark font-medium"
+                                href="#"
+                              >
+                                Privacy Policy
+                              </a>
+                            </Link> */}
+                            <span className="text-site-dark font-medium cursor-pointer" onClick={downloadPrivacy}>
+                              Privacy Policy
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div className="mt-5">
+                  <fieldset>
+                    <div className="flex space-y-1 flex-col justify-center">
+                    {isLoading
+                      ? (
+                        <div className="flex justify-center group relative py-5 px-4 border border-transparent bg-site-main text-sm font-medium rounded-md text-white focus:outline-none uppercase tracking-widest">
+                        <StyledLoadingSpinner><div></div><div></div><div></div><div></div></StyledLoadingSpinner>
+                        </div>
+                      )
+                      : (
+                        <button
+                            type="button"
+                            className={!checkme ? "savesign-button group relative py-5 px-4 text-sm font-medium rounded-md focus:outline-none uppercase tracking-widest bg-input-gray border-gray-100" : "group relative py-5 px-4 border border-transparent bg-site-main text-sm font-medium rounded-md text-white focus:outline-none uppercase tracking-widest"}
+                            onClick={handleOnSubmit}
+                            disabled={!checkme}
+                          >
+                            Create Account
+                          </button>
+                      )}
+                    </div>
+                  </fieldset>
+                </div>
+                {validationErrors.length > 0 && (
+                  <div className="mt-3 md:px-12">
+                    {validationErrors.map((error, idx) => (
+                      <p key={idx} className="text-sm text-center text-site-main font-medium tracking-wide">{error}</p>
+                    ))}
+                  </div>
+                )}
+              </form>
+            </div>
+
+            <div className="mt-12 md:mt-12">
+              <p className="text-center text-site-gray font-light text-opacity-60">
+                {new Date().getFullYear()} &#169; HostShield
+              </p>
+            </div>
+          </div>
+          <div className="hidden lg:order-2 lg:w-3/5 bg-section-gradient lg:flex flex-col justify-center relative overflow-hidden  text-white p-5">
+            <StyledTransparentShieldBg className="inline-block w-screen h-screen absolute top-0 opacity-20" />
+            <Logo className="w-full h-32 mx-auto z-10" />
+            <p className="text-center md:text-4xl font-medium mt-12 z-10">
+              Your waiver, only smarter
+            </p>
+            {/*p className="mt-6 opacity-75 text-center text-sm md:text-base font-light px-0 md:px-20 z-10">
+              Convert your waiver into a digital smart waiver{" "}
+              <br className="hidden md:block" /> and get more than just a
+              signature.
+            </p>*/}
+          </div>
+        </div>
+      </motion.section>
+    </div>
+  );
+}
+
+const StyledLoadingSpinner = styled.div`
+  display: inline-block;
+  position: relative;
+  height: 20px;
+  width: 76px;
+
+  div {
+    position: absolute;
+    top: 3.5px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+`;
+
+const StyledTransparentShieldBg = styled(TransparentShieldBg)`
+  left: -60%;
+  @media (min-width: 1200px) {
+    left: -80%;
+  }
+  @media (min-width: 1440px) {
+    left: -84%;
+  }
+`;

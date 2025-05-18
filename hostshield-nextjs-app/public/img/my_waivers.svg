@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="30px" viewBox="0 0 28 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>my_waivers</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="sidebar_only_icons_lawyer" transform="translate(-36.000000, -30.000000)">
+            <g id="Group">
+                <g transform="translate(0.000000, 27.000000)">
+                    <g id="my_waivers" transform="translate(32.000000, 0.000000)">
+                        <polygon id="Path" points="0 0 36 0 36 36 0 36"></polygon>
+                        <path d="M10.5,9 L10.5,4.5 C10.5,3.67157288 11.1715729,3 12,3 L30,3 C30.8284271,3 31.5,3.67157288 31.5,4.5 L31.5,25.5 C31.5,26.3284271 30.8284271,27 30,27 L25.5,27 L25.5,31.5 C25.5,32.328 24.825,33.000027 23.9895,33.000027 L6.0105,33.000027 C5.61098019,33.002395 5.22697979,32.8454656 4.94348794,32.5639444 C4.65999609,32.2824232 4.50039195,31.8995268 4.5,31.5 L4.5045,10.5 C4.5045,9.672 5.1795,9 6.0135,9 L10.5,9 Z M7.503,12 L7.5,30 L22.5,30 L22.5,12 L7.503,12 Z M13.5,9 L25.5,9 L25.5,24 L28.5,24 L28.5,6 L13.5,6 L13.5,9 Z M10.5,16.5 L19.5,16.5 L19.5,19.5 L10.5,19.5 L10.5,16.5 Z M10.5,22.5 L19.5,22.5 L19.5,25.5 L10.5,25.5 L10.5,22.5 Z" id="Shape" fill="#313131" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
