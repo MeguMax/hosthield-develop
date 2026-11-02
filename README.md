@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HostShield frontend
 
-## Getting Started
+Historical frontend code for a waiver-management product. The original product has closed; this repository is retained as a code example rather than an active service.
 
-First, run the development server:
+It contains a Next.js application with separate dashboard interfaces for users, lawyers and administrators, plus the product's marketing website.
+
+## Application areas
+
+- User registration, profile and account screens.
+- Waiver creation, document views, signature interfaces and request/review flows.
+- Booking-related views and separate user, lawyer and administrator layouts.
+- Payment and subscription-related screens using Stripe client libraries.
+- A marketing website with responsive layouts, SCSS and animation modules.
+
+These are frontend implementations. Role-specific pages are not, by themselves, evidence of server-enforced access control or a complete payment system.
+
+## Repository layout
+
+| Directory | Contents |
+| --- | --- |
+| `hostshield-nextjs-app` | Next.js 11 / React 17 application, Redux state, Tailwind and SCSS |
+| `hostshield-homepage` | Marketing site with JavaScript, SCSS, Gulp 4, GSAP and AOS |
+
+The application uses the Next.js **Pages Router**. It is not an App Router project.
+
+## Inspecting the application locally
+
+The packages use a historical dependency stack. Use an isolated development environment compatible with their lockfiles; bringing the project onto a current framework/runtime is separate maintenance work.
 
 ```bash
+git clone https://github.com/MeguMax/hosthield-develop.git
+cd hosthield-develop/hostshield-nextjs-app
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The development application runs on `http://localhost:3000`.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Business operations depend on an external backend that is not included here. For a local integration, update the API base URL in `utils.js` to a service you control. The variable is named `PUBLIC_API_KEY`, but its value is used as a base URL.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+The package also defines `npm run build`, `npm start` and `npm run lint`. Its legacy production server in `server.js` binds to port 80, or port 443 when local TLS files are present. `npm run dev` is the simpler entry point for inspecting the interface.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Marketing website
 
-## Learn More
+From the repository root:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cd hostshield-homepage
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The homepage package also provides `npm run watch` and `npm run prod`. See its Gulp configuration for the development server and output locations.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Scope and credits
 
-## Deploy on Vercel
+This repository is useful for reviewing frontend flows, component structure and integration boundaries. It does not include the complete backend, an active deployment or a self-contained live payment environment.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Original package credits and metadata are preserved. The homepage tooling package credits Goran Vezmar and declares ISC licensing; the Next.js application package does not declare a license. The existing Next.js starter documentation remains in `hostshield-nextjs-app/README.md`.
